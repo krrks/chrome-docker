@@ -14,7 +14,7 @@ RUN useradd apps \
     && mkdir -p /home/apps \
     # && chown -v -R apps:apps /home/apps \
     && mkdir /.fluxbox \
-    && mkdir /tmp \
+    # && mkdir /tmp \
     && touch /.fehbg \
     && touch /.x11vnc.pass \
     && chmod -R 777 /home/apps \
