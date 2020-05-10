@@ -14,14 +14,16 @@ RUN useradd apps \
     && mkdir -p /home/apps \
     # && chown -v -R apps:apps /home/apps \
     && mkdir /.fluxbox \
+    && mkdir /tmp \
     && touch /.fehbg \
     && touch /.x11vnc.pass \
     && chmod -R 777 /home/apps \
     && chmod -R 777 /.fluxbox \
     && chmod -R 777 /.fehbg \
-    && chmod -R 777 /.x11vnc.pass
+    && chmod -R 777 /.x11vnc.pass \
+    && chmod -R 777 /tmp
     
+EXPOSE 5900
 
 COPY bootstrap.sh /
-
 CMD '/bootstrap.sh'
