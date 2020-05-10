@@ -12,7 +12,15 @@ RUN apt-get update && apt-get clean && apt-get install -y \
 
 RUN useradd apps \
     && mkdir -p /home/apps \
-    && chown -v -R apps:apps /home/apps
+    # && chown -v -R apps:apps /home/apps \
+    && mkdir /.fluxbox \
+    && touch /.fehbg \
+    && touch /.x11vnc.pass \
+    && chmod -R 777 /home/apps \
+    && chmod -R 777 /.fluxbox \
+    && chmod -R 777 /.fehbg \
+    && chmod -R 777 /.x11vnc.pass
+    
 
 COPY bootstrap.sh /
 
